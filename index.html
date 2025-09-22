@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Travel Booking System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <style>
+        /* Hero background with flight image and dark overlay */
+        .hero-section {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 0.75rem;
+            padding: 6rem 2rem 4rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 0.75rem;
+            z-index: 0;
+        }
+        .hero-title, .hero-subtitle, .cta-button {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            color: #d1d5db; /* lighter gray for subtitle */
+        }
+        .cta-button {
+            background-color: #111827;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(17, 24, 39, 0.4);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .cta-button:hover,
+        .cta-button:focus-visible {
+            background-color: #374151;
+            transform: scale(1.05);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-header" role="banner">
+        <nav class="container nav-bar" aria-label="Primary Navigation">
+            <a href="index.html" class="logo" aria-label="Travel Booking System Logo">🌍 TravelBooking</a>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><button role="menuitem" class="nav-button book-ticket" onclick="navigate('ticketBooking.jsp')">🎫 Book Tickets</button></li>
+                <li role="none"><button role="menuitem" class="nav-button" onclick="navigate('flightSearch.jsp')">✈️ Flights</button></li>
+                <li role="none"><button role="menuitem" class="nav-button" onclick="navigate('hotelSearch.jsp')">🏨 Hotels</button></li>
+                <li role="none"><button role="menuitem" class="nav-button" onclick="navigate('activitySearch.jsp')">🎯 Activities</button></li>
+                <li role="none"><button role="menuitem" class="nav-button" onclick="navigate('viewBookings.jsp')">📋 My Bookings</button></li>
+                <li role="none"><button role="menuitem" class="nav-button" onclick="navigate('login.jsp')">🔐 Login</button></li>
+                <li role="none"><button role="menuitem" class="nav-button" onclick="navigate('signup.jsp')">📝 Sign Up</button></li>
+                <li role="none"><button role="menuitem" class="nav-button" onclick="navigate('logout.jsp')">🚪 Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container main-content" tabindex="-1">
+        <section class="hero-section" aria-label="Hero">
+            <h1 class="hero-title">Your Gateway to Amazing Travel Experiences</h1>
+            <p class="hero-subtitle">Simplify your travel planning with our all-in-one booking system</p>
+            <button class="cta-button" onclick="navigate('ticketBooking.jsp')" aria-label="Book Tickets">
+                🎫 Get Started - Book Tickets
+            </button>
+        </section>
+
+        <section class="quick-start" aria-label="Quick Start Guide">
+            <div class="card">
+                <h2>🚀 Quick Start Guide</h2>
+                <ol>
+                    <li><strong>New User?</strong> Click <button class="link-button" onclick="navigate('signup.jsp')">Sign Up</button> to create your account</li>
+                    <li><strong>Existing User?</strong> Click <button class="link-button" onclick="navigate('login.jsp')">Login</button> to access your account</li>
+                    <li><strong>Book Tickets:</strong> Use the <button class="link-button" onclick="navigate('ticketBooking.jsp')">Book Tickets</button> button for all-in-one booking</li>
+                    <li><strong>Search Flights:</strong> Browse available flights and book directly via <button class="link-button" onclick="navigate('flightSearch.jsp')">Flights</button></li>
+                    <li><strong>View Bookings:</strong> Check all your confirmed reservations under <button class="link-button" onclick="navigate('viewBookings.jsp')">My Bookings</button></li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer container" role="contentinfo">
+        <p>&copy; 2024 TravelBooking System – All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+

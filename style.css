@@ -1,0 +1,223 @@
+/* Reset & base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Outfit', Arial, sans-serif;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    color: #374151; /* neutral dark gray */
+}
+
+/* Overlay for lightening background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255 255 255 / 0.85);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Container for content */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Sticky header and nav */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    z-index: 1000;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #111827;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-button {
+    background-color: #111827;
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+}
+
+.nav-button:hover,
+.nav-button:focus-visible {
+    background-color: #374151;
+    transform: scale(1.05);
+    outline: none;
+}
+
+.nav-button.book-ticket {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    font-weight: 700;
+    animation: pulse 2.5s infinite;
+    color: white;
+}
+
+.nav-button.book-ticket:hover,
+.nav-button.book-ticket:focus-visible {
+    background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Main content */
+.main-content {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Hero section */
+.hero-section {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 4rem 2rem 3rem 2rem;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #111827;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    color: #6b7280;
+}
+
+/* CTA button in hero */
+.cta-button {
+    background-color: #111827;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 10px rgb(17 24 39 / 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+    background-color: #374151;
+    transform: scale(1.05);
+    outline: none;
+}
+
+/* Quick start card */
+.quick-start .card {
+    background: white;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.75rem;
+    padding: 2rem 3rem;
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.07);
+    color: #374151;
+}
+
+.quick-start h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.quick-start ol {
+    text-align: left;
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    padding-left: 1.2rem;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+    color: #1e40af;
+    outline: none;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .cta-button {
+        width: 100%;
+    }
+}
+
